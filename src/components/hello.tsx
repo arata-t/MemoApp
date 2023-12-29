@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet, type TextStyle } from 'react-native'
 
 interface Props {
-  children: string
+  children?: string
   bang?: boolean
   style?: TextStyle
 }
