@@ -1,48 +1,18 @@
 import { View, Text, StyleSheet } from "react-native"
 
+import Header from "../components/Header"
+import MemoListItem from "../components/MemoListItem"
+
 const Index = (): JSX.Element => {
   return (
     <View style={styles.container}>
 
-      <View style={styles.header}>
-        <View style={styles.headerInner}>
-          <Text style={styles.headerTitle}>Memo App</Text>
-          <Text style={styles.headerRight}>ログアウト</Text>
-        </View>
-      </View>
+      <Header />
 
       <View>
-
-        <View style={styles.memoListItem}>
-          <View>
-            <Text style={styles.memoListItemTitle}>買い物リスト</Text>
-            <Text style={styles.memoListItemDate}>2023年10月1日</Text>
-          </View>
-          <View>
-            <Text>x</Text>
-          </View>
-        </View>
-
-        <View style={styles.memoListItem}>
-          <View>
-            <Text style={styles.memoListItemTitle}>買い物リスト</Text>
-            <Text style={styles.memoListItemDate}>2023年10月1日</Text>
-          </View>
-          <View>
-            <Text>x</Text>
-          </View>
-        </View>
-
-        <View style={styles.memoListItem}>
-          <View>
-            <Text style={styles.memoListItemTitle}>買い物リスト</Text>
-            <Text style={styles.memoListItemDate}>2023年10月1日</Text>
-          </View>
-          <View>
-            <Text>x</Text>
-          </View>
-        </View>
-
+        <MemoListItem />
+        <MemoListItem />
+        <MemoListItem />
       </View>
       <View style={styles.circleButton}>
         <Text style={styles.circleButtonLabel}>+</Text>
@@ -56,44 +26,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#ffffff'
   },
-  header: {
-    backgroundColor: '#467FD3',
-    height: 104,
-    justifyContent: 'flex-end'
-  },
-  headerInner: {
-    alignItems: 'center'
-  },
-  headerRight: {
-    position: 'absolute',
-    right: 16,
-    bottom: 16,
-    color: 'rgba(255,255,255,0.7)'
-  },
-  headerTitle: {
-    marginBottom: 8,
-    fontSize: 22,
-    lineWeight: 32,
-    fontWeight: 'bold',
-    color: '#ffffff'
-  },
-  memoListItem: {
-    backgroundColor: '#ffffff',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    paddingVertical: 16,
-    paddingHorizontal: 19,
-    alignItems: 'center'
-  },
-  memoListItemTitle: {
-    fontSize: 16,
-    lineHeight: 32
-  },
-  memoListItemDate: {
-    fontSize: 12,
-    lineHeight: 16,
-    color: '#848484'
-  },
+
   circleButton: {
     width: 64,
     height: 64,
