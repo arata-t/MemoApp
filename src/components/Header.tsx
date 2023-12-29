@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
   headerTitle: {
     marginBottom: 8,
     fontSize: 22,
-    lineWeight: 32,
+    lineHeight: 32,
     fontWeight: 'bold',
     color: '#ffffff'
   },
