@@ -3,7 +3,7 @@ import Button from '../../components/Button'
 import { Link, router } from 'expo-router'
 
 const handlePress = (): void => {
-  router.push('/memo/list')
+  router.replace('/memo/list')
 }
 
 const LogIn = (): JSX.Element => {
