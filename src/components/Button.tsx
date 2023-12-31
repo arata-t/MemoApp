@@ -6,9 +6,9 @@ interface Props {
 }
 
 const Button = (props: Props): JSX.Element => {
-  const { label } = props
+  const { label, onPress } = props
   return (
-    <TouchableOpacity style={styles.button}>
+    <TouchableOpacity onPress={onPress} style={styles.button}>
       <Text style={styles.buttonLabel}>{label}</Text>
     </TouchableOpacity>
   )
