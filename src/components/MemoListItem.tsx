@@ -1,4 +1,5 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import Icon from './Icon'
 
 const memoListItem = (): JSX.Element => {
   return (
@@ -7,9 +8,9 @@ const memoListItem = (): JSX.Element => {
         <Text style={styles.memoListItemTitle}>買い物リスト</Text>
         <Text style={styles.memoListItemDate}>2023年10月1日</Text>
       </View>
-      <View>
-        <Text>x</Text>
-      </View>
+      <TouchableOpacity>
+        <Icon name='delete' size={32} color='#B0B0B0'></Icon>
+      </TouchableOpacity>
     </View>
   )
 }
@@ -21,7 +22,9 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     paddingVertical: 16,
     paddingHorizontal: 19,
-    alignItems: 'center'
+    alignItems: 'center',
+    borderBottomWidth: 0.5,
+    borderColor: 'rgba(0,0,0,0.15'
   },
   memoListItemTitle: {
     fontSize: 16,
