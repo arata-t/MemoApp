@@ -18,7 +18,7 @@ const LogIn = (): JSX.Element => {
           <TextInput
             style={styles.input}
             value={email}
-            onChange={(text) => { setEmail(text) }}
+            onChange={(event) => { setEmail(event.nativeEvent.text) }}
             autoCapitalize='none'
             keyboardType='email-address'
             placeholder='Email Address'
@@ -27,7 +27,7 @@ const LogIn = (): JSX.Element => {
           <TextInput
             style={styles.input}
             value={password}
-            onChange={(text) => { setPassword(text) }}
+            onChange={(event) => { setPassword(event.nativeEvent.text) }}
             autoCapitalize='none'
             secureTextEntry
             placeholder='password'

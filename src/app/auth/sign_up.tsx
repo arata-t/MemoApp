@@ -2,10 +2,20 @@ import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert } from 'reac
 import Button from '../../components/Button'
 import { Link, router } from 'expo-router'
 import { useState } from 'react'
+import { auth } from '../../config'
+import { createUserWithEmailAndPassword } from 'firebase/auth'
 
-const handlePress = (): void => {
+const handlePress = (email: string, password: string): void => {
   // 登録
-  router.replace('/memo/list')
+  createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      console.log((userCredential.user.uid))
+      router.replace('/memo/list')
+    })
+    .catch((error) => {
+      const { message } = error
+      Alert.alert(String(message));
+    })
 }
 
 const SignUp = (): JSX.Element => {
@@ -19,7 +29,7 @@ const SignUp = (): JSX.Element => {
           <TextInput
             style={styles.input}
             value={email}
-            onChange={(text) => { setEmail(text) }}
+            onChange={(event) => { setEmail(event.nativeEvent.text) }}
             autoCapitalize='none'
             keyboardType='email-address'
             placeholder='Email Address'
@@ -28,14 +38,14 @@ const SignUp = (): JSX.Element => {
           <TextInput
             style={styles.input}
             value={password}
-            onChange={(text) => { setPassword(text) }}
+            onChange={(event) => { setPassword(event.nativeEvent.text) }}
             autoCapitalize='none'
             secureTextEntry
             placeholder='password'
             textContentType='password'
           />
         </View>
-        <Button label='Submit' onPress={handlePress} />
+        <Button label='Submit' onPress={() => { handlePress(email, password) }} />
         <View style={styles.footer}>
           <Text style={styles.footerText}>Already registered?</Text>
           <Link href='/auth/log_in' asChild>
