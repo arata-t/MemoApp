@@ -13,7 +13,7 @@ const handlePress = (email: string, password: string): void => {
     })
     .catch((error) => {
       const { message } = error
-      Alert.alert(String(message));
+      Alert.alert(String(message))
     })
 }
 
