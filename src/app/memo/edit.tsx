@@ -1,6 +1,8 @@
 import {
-  View, TextInput, StyleSheet, KeyboardAvoidingView, Alert
+  View, TextInput, StyleSheet, Alert
 } from 'react-native'
+
+import KeyboardAvoidingView from '../../components/keyboardAvoidingView'
 
 import CircleButton from '../../components/CircleBUtton'
 import Icon from '../../components/Icon'
@@ -44,7 +46,7 @@ const Edit = (): JSX.Element => {
   }, [])
 
   return (
-    <KeyboardAvoidingView behavior='height' style={styles.container}>
+    <KeyboardAvoidingView style={styles.container}>
       <View style={styles.inputContainer}>
         <TextInput
           multiline
