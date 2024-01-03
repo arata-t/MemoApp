@@ -28,8 +28,7 @@ const handlePress = (bodyText: string): void => {
 }
 
 const Create = (): JSX.Element => {
-  const [bodyText, setBodyText] = useState()
-  console.log(bodyText)
+  const [bodyText, setBodyText] = useState('')
   return (
     <KeyboardAvoidingView style={styles.container}>
       <View style={styles.inputContainer}>

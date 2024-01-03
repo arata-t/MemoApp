@@ -36,7 +36,7 @@ const Edit = (): JSX.Element => {
     getDoc(ref)
       .then(
         (docRef) => {
-          const RemoteBodyText = docRef?.data()?.bodyText
+          const RemoteBodyText = String(docRef?.data()?.bodyText)
           setBodyText(RemoteBodyText)
         }
       )
