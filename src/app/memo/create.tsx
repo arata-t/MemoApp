@@ -22,7 +22,7 @@ const handlePress = (bodyText: string): void => {
       console.log('success', docRef.id)
       router.back()
     })
-    .catch((error: any) => {
+    .catch((error) => {
       console.log(error)
     })
 }
